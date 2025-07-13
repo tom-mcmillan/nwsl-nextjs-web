@@ -4,11 +4,11 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center px-8 py-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col items-center text-center max-w-4xl">
         <div className="text-sm text-gray-600 dark:text-gray-400 mb-8 font-medium">
-          NWSL Data Project
+          <span className="text-red-500">NW</span><span className="text-blue-500">SL</span> Data Project
         </div>
         
         <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-tight">
-          The search for objective knowledge.
+          All NWSL data, free and open.
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 items-center mb-16">
