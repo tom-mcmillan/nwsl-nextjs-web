@@ -1,4 +1,6 @@
 
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8 py-20 font-[family-name:var(--font-geist-sans)]">
@@ -7,7 +9,7 @@ export default function Home() {
           NWSL Data Project
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-tight">
+        <h1 className="text-[clamp(2rem,calc(2rem+2*((100vw-23.4375rem)/66.5625)),4rem)] leading-[clamp(2.28rem,calc(2.28rem+1.72*((100vw-23.4375rem)/66.5625)),4rem)] tracking-[-0.03em] font-medium mb-8">
           Free and open<br /><span className="text-blue-500">NWSL</span> data.
         </h1>
         
@@ -24,15 +26,33 @@ export default function Home() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl">
-          <button className="p-4 text-left rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900">
-            <div className="font-medium text-sm">BigQuery →</div>
-          </button>
-          <button className="p-4 text-left rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900">
-            <div className="font-medium text-sm">MPC Server →</div>
-          </button>
-          <button className="p-4 text-left rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900">
-            <div className="font-medium text-sm">Chat →</div>
-          </button>
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900 overflow-hidden">
+            <Image
+              src="/Screenshot 2025-07-13 at 4.00.38 PM.png"
+              alt="Placeholder 1"
+              width={400}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900 overflow-hidden">
+            <Image
+              src="/Screenshot 2025-07-13 at 4.00.46 PM.png"
+              alt="Placeholder 2"
+              width={400}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors bg-white dark:bg-gray-900 overflow-hidden">
+            <Image
+              src="/Screenshot 2025-07-13 at 4.00.54 PM.png"
+              alt="Placeholder 3"
+              width={400}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </main>
     </div>
