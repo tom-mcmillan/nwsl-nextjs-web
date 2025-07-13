@@ -15,13 +15,13 @@ export default function Home() {
         
         <div className="flex flex-col sm:flex-row gap-4 items-center mb-16">
           <button className="rounded-full bg-black text-white hover:bg-gray-800 transition-colors font-medium text-sm px-6 py-3 flex items-center gap-2">
-            Try →
+            Get answers →
           </button>
           <a
             href="#"
             className="font-medium text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
           >
-            Why ›
+            Documentation ›
           </a>
         </div>
         
