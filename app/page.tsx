@@ -9,7 +9,7 @@ export default function Home() {
           NWSL Data Project
         </div>
         
-        <h1 className="text-[clamp(2rem,calc(2rem+2*((100vw-23.4375rem)/66.5625)),4rem)] leading-[clamp(2.28rem,calc(2.28rem+1.72*((100vw-23.4375rem)/66.5625)),4rem)] tracking-[-0.03em] font-medium mb-8">
+        <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-tight">
           Free and open<br /><span className="text-blue-500">NWSL</span> data.
         </h1>
         
