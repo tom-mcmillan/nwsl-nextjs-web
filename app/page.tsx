@@ -8,7 +8,7 @@ export default function Home() {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-tight">
-          Free and open <span className="text-blue-500">NWSL</span> data.
+          Free and open<br /><span className="text-blue-500">NWSL</span> data.
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 items-center mb-16">
