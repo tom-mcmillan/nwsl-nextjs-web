@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
+
+interface GoogleCredentialResponse {
+  credential: string;
+  select_by?: string;
+}
 
 interface GoogleAuthButtonProps {
-  onSuccess: (credential: any) => void;
+  onSuccess: (credential: GoogleCredentialResponse) => void;
   onError?: () => void;
   text?: string;
   disabled?: boolean;
@@ -15,6 +20,23 @@ export default function GoogleAuthButton({
   text = "Continue with Google",
   disabled = false 
 }: GoogleAuthButtonProps) {
+  
+  const handleCredentialResponse = useCallback((response: GoogleCredentialResponse) => {
+    try {
+      // Decode the JWT token to get user info
+      const payload = response.credential.split('.')[1];
+      const userInfo = JSON.parse(atob(payload));
+      
+      // Redirect to platform with user info
+      const redirectUrl = `https://platform.nwsldata.com?auth=success&email=${encodeURIComponent(userInfo.email)}&name=${encodeURIComponent(userInfo.name)}`;
+      window.location.href = redirectUrl;
+      
+      onSuccess(response);
+    } catch (error) {
+      console.error('Google auth error:', error);
+      if (onError) onError();
+    }
+  }, [onSuccess, onError]);
   
   useEffect(() => {
     // Load Google Identity Services
@@ -35,25 +57,11 @@ export default function GoogleAuthButton({
     document.head.appendChild(script);
     
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
-  }, []);
-
-  const handleCredentialResponse = (response: any) => {
-    try {
-      // Decode the JWT token to get user info
-      const userInfo = JSON.parse(atob(response.credential.split('.')[1]));
-      
-      // Redirect to platform with user info
-      const redirectUrl = `https://platform.nwsldata.com?auth=success&email=${userInfo.email}&name=${userInfo.name}`;
-      window.location.href = redirectUrl;
-      
-      onSuccess(response);
-    } catch (error) {
-      console.error('Google auth error:', error);
-      if (onError) onError();
-    }
-  };
+  }, [handleCredentialResponse]);
 
   const handleClick = () => {
     if (window.google) {
@@ -81,6 +89,13 @@ export default function GoogleAuthButton({
 // Extend Window interface for TypeScript
 declare global {
   interface Window {
-    google: any;
+    google: {
+      accounts: {
+        id: {
+          initialize: (config: { client_id: string; callback: (response: GoogleCredentialResponse) => void }) => void;
+          prompt: () => void;
+        };
+      };
+    };
   }
 }

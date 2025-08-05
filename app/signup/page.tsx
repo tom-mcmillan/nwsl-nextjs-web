@@ -24,7 +24,7 @@ export default function SignUp() {
     }
   };
 
-  const handleGoogleSuccess = (credential: any) => {
+  const handleGoogleSuccess = (credential: { credential: string; select_by?: string }) => {
     console.log('Google sign up successful:', credential);
     setIsLoading(false);
   };

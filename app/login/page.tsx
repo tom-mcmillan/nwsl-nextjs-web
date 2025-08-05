@@ -25,7 +25,7 @@ export default function LogIn() {
     }
   };
 
-  const handleGoogleSuccess = (credential: any) => {
+  const handleGoogleSuccess = (credential: { credential: string; select_by?: string }) => {
     console.log('Google log in successful:', credential);
     setIsLoading(false);
   };
