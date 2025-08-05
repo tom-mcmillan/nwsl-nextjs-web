@@ -36,9 +36,6 @@ export default function Home() {
 
           {/* ChatGPT-style Question Section */}
           <div className="w-full max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-medium mb-12 text-gray-800">
-              What can I help with?
-            </h2>
             
             {/* Large Input Box */}
             <form onSubmit={handleSubmit} className="w-full">
