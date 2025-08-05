@@ -12,15 +12,22 @@ export default function Home() {
   useEffect(() => {
     const fetchHeadline = async () => {
       try {
+        console.log('Fetching headline from API...');
         const response = await fetch('https://platform.nwsldata.com/api/headline');
+        console.log('API response status:', response.status);
+        
         if (response.ok) {
           const data = await response.json();
+          console.log('API response data:', data);
           if (data.headline) {
+            console.log('Setting headline to:', data.headline);
             setDynamicHeadline(data.headline);
           }
+        } else {
+          console.log('API response not ok:', response.status, response.statusText);
         }
-      } catch {
-        console.log('Failed to fetch dynamic headline, using fallback');
+      } catch (error) {
+        console.log('Failed to fetch dynamic headline:', error);
         // Keep the default headline if API fails
       }
     };
@@ -61,7 +68,7 @@ export default function Home() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Ask anything"
-                  className="w-full min-h-[120px] px-6 py-6 text-lg border-2 border-gray-200 rounded-3xl resize-none focus:outline-none focus:border-blue-500 transition-colors placeholder-gray-400"
+                  className="w-full min-h-[120px] px-6 py-6 text-base border border-gray-200 rounded-3xl resize-none focus:outline-none placeholder-gray-400"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
