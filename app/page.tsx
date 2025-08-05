@@ -25,12 +25,8 @@ export default function Home() {
         <main className="flex flex-col items-center text-center max-w-4xl w-full">
           {/* Hero Section */}
           <div className="mb-16">
-            <div className="text-sm text-gray-600 dark:text-gray-400 mb-8 font-medium">
-              NWSL Data Project
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-tight">
-              Free and open access<br />to <span className="text-blue-500">NWSL</span> ⚽ data.
+            <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-8 leading-tight text-gray-800">
+              What do you want to know about the NWSL?
             </h1>
           </div>
 
