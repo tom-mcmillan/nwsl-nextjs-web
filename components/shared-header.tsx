@@ -3,13 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-interface SharedHeaderProps {
-  onSignIn?: (email: string) => void;
-}
-
-export default function SharedHeader({
-  onSignIn,
-}: SharedHeaderProps) {
+export default function SharedHeader() {
 
 
   const handleDocsClick = () => {

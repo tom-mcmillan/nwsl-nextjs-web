@@ -1,25 +1,3 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
+import { handlers } from "@/auth"
 
-const handler = NextAuth({
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    })
-  ],
-  callbacks: {
-    async session({ session, token }) {
-      return session
-    },
-    async jwt({ token, user }) {
-      return token
-    },
-  },
-  pages: {
-    signIn: '/login',
-    signUp: '/signup',
-  }
-})
-
-export { handler as GET, handler as POST }
+export const { GET, POST } = handlers
