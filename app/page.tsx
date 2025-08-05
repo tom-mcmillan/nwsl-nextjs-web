@@ -1,11 +1,32 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SharedHeader from "../components/shared-header";
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
+  const [dynamicHeadline, setDynamicHeadline] = useState("What do you want to know about the NWSL?");
+
+  // Fetch dynamic headline from API
+  useEffect(() => {
+    const fetchHeadline = async () => {
+      try {
+        const response = await fetch('https://platform.nwsldata.com/api/headline');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.headline) {
+            setDynamicHeadline(data.headline);
+          }
+        }
+      } catch {
+        console.log('Failed to fetch dynamic headline, using fallback');
+        // Keep the default headline if API fails
+      }
+    };
+
+    fetchHeadline();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +47,7 @@ export default function Home() {
           {/* Hero Section */}
           <div className="mb-16">
             <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-8 leading-tight text-gray-800">
-              What do you want to know about the NWSL?
+              {dynamicHeadline}
             </h1>
           </div>
 
