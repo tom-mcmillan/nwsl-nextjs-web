@@ -49,18 +49,17 @@ export default function Home() {
       <SharedHeader showAuth={false} />
       
       {/* Main content centered */}
-      <div className="flex-1 flex flex-col items-center justify-center px-8">
-        <main className="flex flex-col items-center text-center max-w-4xl w-full">
+      <div className="flex-1 flex flex-col items-center justify-center px-8 py-20">
+        <main className="flex flex-col items-center text-center max-w-2xl w-full">
           {/* Hero Section */}
-          <div className="mb-16">
-            <h1 className="text-3xl md:text-4xl font-medium tracking-tight mb-8 leading-tight text-gray-800">
+          <div className="mb-12">
+            <h1 className="text-2xl font-normal mb-8 text-gray-900">
               {dynamicHeadline}
             </h1>
           </div>
 
           {/* ChatGPT-style Question Section */}
-          <div className="w-full max-w-3xl">
-            
+          <div className="w-full">
             {/* Large Input Box */}
             <form onSubmit={handleSubmit} className="w-full">
               <div className="relative">
@@ -68,7 +67,7 @@ export default function Home() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Ask anything"
-                  className="w-full min-h-[120px] px-6 py-6 text-base border border-gray-200 rounded-3xl resize-none focus:outline-none placeholder-gray-400"
+                  className="w-full min-h-[100px] px-4 py-4 text-base border border-gray-300 rounded-2xl resize-none focus:outline-none placeholder-gray-500 bg-white"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
@@ -81,11 +80,11 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={!inputText.trim()}
-                  className="absolute bottom-4 right-4 p-3 bg-black text-white rounded-full hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                  className="absolute bottom-3 right-3 p-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                 >
                   <svg
-                    width="20"
-                    height="20"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,8 +102,8 @@ export default function Home() {
             </form>
             
             {/* Helper Text */}
-            <p className="text-sm text-gray-500 mt-4">
-              Press Enter to submit • Free access to NWSL analytics and insights
+            <p className="text-sm text-gray-400 mt-3">
+              Press Enter to submit
             </p>
           </div>
         </main>
