@@ -19,7 +19,7 @@ export default function Home() {
             setDynamicHeadline(data.headline);
           }
         }
-      } catch (error) {
+      } catch {
         console.log('Failed to fetch dynamic headline, using fallback');
         // Keep the default headline if API fails
       }
