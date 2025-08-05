@@ -60,10 +60,8 @@ export default function Home() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Ask anything"
-                  className="w-full min-h-[140px] px-6 py-6 text-base border border-gray-300 rounded-3xl resize-none focus:outline-none placeholder-gray-500 bg-white caret-black"
-                  style={{
-                    caretColor: 'black'
-                  }}
+                  className="w-full min-h-[140px] px-6 py-6 text-base border border-gray-300 rounded-3xl resize-none focus:outline-none placeholder-gray-500 bg-white"
+                  style={{ caretColor: 'black' }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
