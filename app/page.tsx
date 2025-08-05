@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
-      <SharedHeader showAuth={false} />
+      <SharedHeader />
       
       {/* Main content centered */}
       <div className="flex-1 flex flex-col items-center justify-center px-8 py-20">

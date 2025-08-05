@@ -3,17 +3,11 @@
 import React, { useState } from "react";
 
 interface SharedHeaderProps {
-  userEmail?: string;
   onSignIn?: (email: string) => void;
-  onSignOut?: () => void;
-  showAuth?: boolean;
 }
 
 export default function SharedHeader({
-  userEmail,
   onSignIn,
-  onSignOut,
-  showAuth = true,
 }: SharedHeaderProps) {
   const [email, setEmail] = useState("");
   const [isSignInOpen, setIsSignInOpen] = useState(false);
