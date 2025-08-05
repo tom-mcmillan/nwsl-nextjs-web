@@ -159,7 +159,7 @@ export default function SharedHeader({
                 </div>
               </form>
               <p className="text-xs text-gray-500 text-center mt-4">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <button
                   onClick={() => {
                     setIsSignInOpen(false);
