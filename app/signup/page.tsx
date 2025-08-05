@@ -26,11 +26,11 @@ export default function SignUp() {
   const handleGoogleSignUp = async () => {
     setIsLoading(true);
     try {
-      const { signIn } = await import('@/auth');
-      await signIn('google', { redirectTo: 'https://platform.nwsldata.com' });
+      // Redirect to NextAuth signin URL with Google provider
+      const callbackUrl = encodeURIComponent('https://platform.nwsldata.com');
+      window.location.href = `/api/auth/signin/google?callbackUrl=${callbackUrl}`;
     } catch (error) {
       console.error('Google sign up failed:', error);
-    } finally {
       setIsLoading(false);
     }
   };
