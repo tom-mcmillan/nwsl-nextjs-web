@@ -26,8 +26,8 @@ export default function SignUp() {
   const handleGoogleSignUp = async () => {
     setIsLoading(true);
     try {
-      // TODO: Implement Google OAuth
-      console.log('Google sign up clicked');
+      const { signIn } = await import('next-auth/react');
+      await signIn('google', { callbackUrl: 'https://platform.nwsldata.com' });
     } catch (error) {
       console.error('Google sign up failed:', error);
     } finally {
