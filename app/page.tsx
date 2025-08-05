@@ -12,22 +12,15 @@ export default function Home() {
   useEffect(() => {
     const fetchHeadline = async () => {
       try {
-        console.log('Fetching headline from API...');
         const response = await fetch('https://platform.nwsldata.com/api/headline');
-        console.log('API response status:', response.status);
-        
         if (response.ok) {
           const data = await response.json();
-          console.log('API response data:', data);
           if (data.headline) {
-            console.log('Setting headline to:', data.headline);
             setDynamicHeadline(data.headline);
           }
-        } else {
-          console.log('API response not ok:', response.status, response.statusText);
         }
       } catch (error) {
-        console.log('Failed to fetch dynamic headline:', error);
+        console.log('Failed to fetch dynamic headline, using fallback');
         // Keep the default headline if API fails
       }
     };
@@ -67,7 +60,10 @@ export default function Home() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Ask anything"
-                  className="w-full min-h-[140px] px-6 py-6 text-base border border-gray-300 rounded-3xl resize-none focus:outline-none placeholder-gray-500 bg-white"
+                  className="w-full min-h-[140px] px-6 py-6 text-base border border-gray-300 rounded-3xl resize-none focus:outline-none placeholder-gray-500 bg-white caret-black"
+                  style={{
+                    caretColor: 'black'
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
@@ -75,20 +71,6 @@ export default function Home() {
                     }
                   }}
                 />
-                
-                {/* Tools Button */}
-                <button
-                  type="button"
-                  className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 15L17 10H7L12 15Z" fill="currentColor"/>
-                  </svg>
-                  <span className="text-sm font-medium">Tools</span>
-                </button>
                 
                 {/* Submit Button */}
                 <button
