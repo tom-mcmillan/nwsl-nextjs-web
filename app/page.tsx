@@ -53,7 +53,7 @@ export default function Home() {
         <main className="flex flex-col items-center text-center max-w-2xl w-full">
           {/* Hero Section */}
           <div className="mb-12">
-            <h1 className="text-2xl font-normal mb-8 text-gray-900">
+            <h1 className="text-3xl font-medium mb-8 text-gray-900">
               {dynamicHeadline}
             </h1>
           </div>
