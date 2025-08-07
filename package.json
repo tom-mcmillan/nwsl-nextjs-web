@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pip install -r requirements-docs.txt && mkdocs build && next build",
+    "build:docs": "mkdocs build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "gapi-script": "^1.2.0",
+    "google-auth-library": "^10.2.1",
+    "jsonwebtoken": "^9.0.2",
     "next": "15.3.5",
-    "next-auth": "^5.0.0-beta.29",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
