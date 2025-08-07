@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/docs/:path*",
-      "destination": "/docs/:path*"
+      "destination": "https://tom-mcmillan.github.io/nwsl_data/:path*"
     }
   ]
 }

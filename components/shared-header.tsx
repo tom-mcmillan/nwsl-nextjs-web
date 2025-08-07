@@ -7,7 +7,7 @@ export default function SharedHeader() {
 
 
   const handleDocsClick = () => {
-    window.open("/docs", "_blank");
+    window.open("/docs/", "_blank");
   };
 
   const handleLogoClick = () => {
