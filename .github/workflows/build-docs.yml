@@ -1,0 +1,38 @@
+name: Build Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install -r requirements-docs.txt
+          
+      - name: Build documentation
+        run: |
+          mkdocs build
+          
+      - name: Commit built documentation
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/docs/
+          git diff --staged --quiet || git commit -m "Auto-build documentation [skip ci]"
+          git push

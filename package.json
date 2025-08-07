@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "pip install -r requirements-docs.txt && mkdocs build && next build",
+    "build": "next build",
     "build:docs": "mkdocs build",
     "start": "next start",
     "lint": "next lint"

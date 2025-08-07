@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "pip install -r requirements-docs.txt && mkdocs build && npm run build",
   "rewrites": [
     {
       "source": "/docs/:path*",
