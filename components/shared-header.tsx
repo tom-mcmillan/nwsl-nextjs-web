@@ -6,11 +6,13 @@ export default function SharedHeader() {
 
 
   const handlePlatformClick = () => {
-    window.open("https://platform.nwsldata.com", "_blank");
+    // Seamless navigation - same tab for natural flow
+    window.location.href = "https://platform.nwsldata.com";
   };
 
   const handleDocsClick = () => {
-    window.open("https://platform.nwsldata.com/docs/", "_blank");
+    // Seamless navigation - same tab for natural flow
+    window.location.href = "https://platform.nwsldata.com/docs/";
   };
 
   const handleLogoClick = () => {
