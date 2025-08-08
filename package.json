@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dx:doctor": "node ./scripts/dx-doctor.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
@@ -23,5 +24,8 @@
     "eslint-config-next": "^15.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20 <21"
   }
 }
