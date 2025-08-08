@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
 export default function SharedHeader() {
 
 
+  const handlePlatformClick = () => {
+    window.open("https://platform.nwsldata.com", "_blank");
+  };
+
   const handleDocsClick = () => {
-    window.open("/docs/", "_blank");
+    window.open("https://platform.nwsldata.com/docs/", "_blank");
   };
 
   const handleLogoClick = () => {
@@ -29,6 +32,14 @@ export default function SharedHeader() {
 
       {/* Right side buttons */}
       <div className="flex items-center gap-4">
+        {/* Platform Button */}
+        <button
+          onClick={handlePlatformClick}
+          className="text-gray-600 hover:text-gray-800 font-medium"
+        >
+          Platform
+        </button>
+
         {/* Docs Button */}
         <button
           onClick={handleDocsClick}
@@ -36,22 +47,6 @@ export default function SharedHeader() {
         >
           Docs
         </button>
-
-        {/* Log In Button */}
-        <Link
-          href="/login"
-          className="text-gray-600 hover:text-gray-800 font-medium"
-        >
-          Log In
-        </Link>
-
-        {/* Sign Up Button */}
-        <Link
-          href="/signup"
-          className="px-4 py-2 text-sm bg-black text-white rounded-lg hover:bg-gray-800"
-        >
-          Sign Up
-        </Link>
       </div>
     </header>
   );
