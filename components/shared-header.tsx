@@ -14,6 +14,7 @@ export default function SharedHeader() {
   };
 
   const handleLogoClick = () => {
+    // Stay in same tab when going to homepage
     window.location.href = "https://nwsldata.com";
   };
 
