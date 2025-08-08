@@ -1,0 +1,3 @@
+origin	https://github.com/tom-mcmillan/nwsl-nextjs-web.git (fetch)
+origin	https://github.com/tom-mcmillan/nwsl-nextjs-web.git (push)
+* main 8e25975 [origin/main] Update header navigation for seamless user flow
