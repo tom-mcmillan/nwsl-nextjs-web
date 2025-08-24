@@ -98,6 +98,12 @@ export default function ResearchPage() {
                       li: ({...props}) => (
                         <li className="mb-1" {...props} />
                       ),
+                      code: ({...props}) => (
+                        <code className="font-mono text-xs" {...props} />
+                      ),
+                      pre: ({...props}) => (
+                        <pre className="font-mono text-xs" {...props} />
+                      ),
                     }}
                   >
                     {post.content}
