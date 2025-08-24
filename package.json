@@ -10,6 +10,11 @@
     "dx:doctor": "node ./scripts/dx-doctor.mjs"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.5.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
     "canvas": "^3.2.0",
     "next": "15.3.5",

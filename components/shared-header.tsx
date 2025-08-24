@@ -35,6 +35,14 @@ export default function SharedHeader() {
 
       {/* Right side buttons */}
       <div className="flex items-center gap-4">
+        {/* Research Button */}
+        <button
+          onClick={() => window.location.href = "/research"}
+          className="text-gray-600 hover:text-gray-800 font-medium"
+        >
+          Research
+        </button>
+
         {/* Platform Button */}
         <button
           onClick={handlePlatformClick}
