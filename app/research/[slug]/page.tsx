@@ -52,15 +52,15 @@ export default async function ResearchPost({ params }: { params: { slug: string 
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
               components={{
-                table: ({node, ...props}) => (
+                table: ({...props}) => (
                   <div className="overflow-x-auto my-6">
                     <table className="min-w-full border-collapse border border-gray-300" {...props} />
                   </div>
                 ),
-                th: ({node, ...props}) => (
+                th: ({...props}) => (
                   <th className="border border-gray-300 px-4 py-2 bg-gray-50 text-left font-semibold" {...props} />
                 ),
-                td: ({node, ...props}) => (
+                td: ({...props}) => (
                   <td className="border border-gray-300 px-4 py-2" {...props} />
                 ),
               }}
