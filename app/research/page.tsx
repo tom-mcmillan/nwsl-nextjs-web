@@ -59,7 +59,7 @@ export default function ResearchPage() {
                   )}
                 </header>
 
-                <div className="prose prose-lg max-w-none prose-tables:table-auto prose-th:border prose-th:border-gray-300 prose-th:px-4 prose-th:py-2 prose-th:bg-gray-50 prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2 prose-code:bg-transparent prose-pre:bg-transparent">
+                <div className="max-w-none">
                   <ReactMarkdown 
                     remarkPlugins={[remarkGfm]}
                     components={{
@@ -73,6 +73,30 @@ export default function ResearchPage() {
                       ),
                       td: ({...props}) => (
                         <td className="border border-gray-300 px-4 py-2" {...props} />
+                      ),
+                      h1: ({...props}) => (
+                        <h1 className="text-2xl font-bold mb-4 mt-6 text-gray-900" {...props} />
+                      ),
+                      h2: ({...props}) => (
+                        <h2 className="text-xl font-semibold mb-3 mt-5 text-gray-900" {...props} />
+                      ),
+                      h3: ({...props}) => (
+                        <h3 className="text-lg font-semibold mb-2 mt-4 text-gray-900" {...props} />
+                      ),
+                      p: ({...props}) => (
+                        <p className="mb-4 text-gray-700 leading-relaxed" {...props} />
+                      ),
+                      strong: ({...props}) => (
+                        <strong className="font-semibold text-gray-900" {...props} />
+                      ),
+                      ul: ({...props}) => (
+                        <ul className="mb-4 ml-6 list-disc" {...props} />
+                      ),
+                      ol: ({...props}) => (
+                        <ol className="mb-4 ml-6 list-decimal" {...props} />
+                      ),
+                      li: ({...props}) => (
+                        <li className="mb-1" {...props} />
                       ),
                       code: ({className, children, ...props}) => {
                         // Handle code blocks (```code```)
