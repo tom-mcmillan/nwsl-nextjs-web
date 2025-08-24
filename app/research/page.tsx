@@ -59,9 +59,32 @@ export default async function ResearchPage() {
                       code: ({className, children, ...props}) => {
                         // Handle code blocks (```code```)
                         if (className?.includes('language-')) {
+                          const copyToClipboard = () => {
+                            navigator.clipboard.writeText(String(children));
+                          };
+                          
                           return (
-                            <div className="bg-white border border-gray-300 p-6 rounded-lg my-6 overflow-x-auto">
-                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black">
+                            <div className="bg-white border border-gray-300 rounded-lg my-6 overflow-x-auto relative">
+                              <button
+                                onClick={copyToClipboard}
+                                className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
+                                title="Copy to clipboard"
+                              >
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                >
+                                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                              </button>
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16">
                                 <code>{children}</code>
                               </pre>
                             </div>
@@ -74,13 +97,41 @@ export default async function ResearchPage() {
                           </code>
                         );
                       },
-                      pre: ({children, ...props}) => (
-                        <div className="bg-white border border-gray-300 p-6 rounded-lg my-6 overflow-x-auto">
-                          <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black" {...props}>
-                            {children}
-                          </pre>
-                        </div>
-                      ),
+                      pre: ({children, ...props}) => {
+                        const copyToClipboard = () => {
+                          const text = typeof children === 'object' && children && 'props' in children 
+                            ? children.props.children 
+                            : children;
+                          navigator.clipboard.writeText(String(text));
+                        };
+
+                        return (
+                          <div className="bg-white border border-gray-300 rounded-lg my-6 overflow-x-auto relative">
+                            <button
+                              onClick={copyToClipboard}
+                              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
+                              title="Copy to clipboard"
+                            >
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                              </svg>
+                            </button>
+                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" {...props}>
+                              {children}
+                            </pre>
+                          </div>
+                        );
+                      },
                     }}
                   >
                     {post.content}
