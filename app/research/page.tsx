@@ -59,7 +59,7 @@ export default function ResearchPage() {
                   )}
                 </header>
 
-                <div className="prose prose-lg max-w-none prose-tables:table-auto prose-th:border prose-th:border-gray-300 prose-th:px-4 prose-th:py-2 prose-th:bg-gray-50 prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2">
+                <div className="prose prose-lg max-w-none prose-tables:table-auto prose-th:border prose-th:border-gray-300 prose-th:px-4 prose-th:py-2 prose-th:bg-gray-50 prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2 prose-code:bg-transparent prose-pre:bg-transparent">
                   <ReactMarkdown 
                     remarkPlugins={[remarkGfm]}
                     components={{
