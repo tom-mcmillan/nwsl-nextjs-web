@@ -60,8 +60,8 @@ export default async function ResearchPage() {
                         // Handle code blocks (```code```)
                         if (className?.includes('language-')) {
                           return (
-                            <div className="bg-gray-900 text-green-400 p-6 rounded-lg my-6 overflow-x-auto">
-                              <pre className="font-mono text-sm leading-relaxed whitespace-pre">
+                            <div className="bg-white border border-gray-300 p-6 rounded-lg my-6 overflow-x-auto">
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black">
                                 <code>{children}</code>
                               </pre>
                             </div>
@@ -75,8 +75,8 @@ export default async function ResearchPage() {
                         );
                       },
                       pre: ({children, ...props}) => (
-                        <div className="bg-gray-900 text-green-400 p-6 rounded-lg my-6 overflow-x-auto">
-                          <pre className="font-mono text-sm leading-relaxed whitespace-pre" {...props}>
+                        <div className="bg-white border border-gray-300 p-6 rounded-lg my-6 overflow-x-auto">
+                          <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black" {...props}>
                             {children}
                           </pre>
                         </div>
