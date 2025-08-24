@@ -72,7 +72,7 @@ export default function ResearchPage() {
                         <th className="border border-gray-300 px-4 py-2 bg-gray-50 text-left font-semibold" {...props} />
                       ),
                       td: ({...props}) => (
-                        <td className="border border-gray-300 px-4 py-2" {...props} />
+                        <td className="border border-gray-300 px-4 py-2 font-mono text-xs" {...props} />
                       ),
                       h1: ({...props}) => (
                         <h1 className="text-2xl font-bold mb-4 mt-6 text-gray-900" {...props} />
