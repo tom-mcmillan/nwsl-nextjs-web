@@ -77,32 +77,61 @@ export default function ResearchPage() {
                       code: ({className, children, ...props}) => {
                         // Handle code blocks (```code```)
                         if (className?.includes('language-')) {
-                          const copyToClipboard = () => {
-                            navigator.clipboard.writeText(String(children));
+                          const CopyButton = () => {
+                            const [copied, setCopied] = useState(false);
+                            
+                            const copyToClipboard = () => {
+                              navigator.clipboard.writeText(String(children));
+                              setCopied(true);
+                              setTimeout(() => setCopied(false), 2000);
+                            };
+                            
+                            return (
+                              <button
+                                onClick={copyToClipboard}
+                                className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-all duration-200 opacity-60 hover:opacity-100"
+                                title={copied ? "Copied!" : "Copy to clipboard"}
+                              >
+                                <div className="relative w-4 h-4">
+                                  {/* Copy Icon */}
+                                  <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className={`absolute inset-0 transition-opacity duration-200 ${copied ? 'opacity-0' : 'opacity-100'}`}
+                                  >
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                  </svg>
+                                  
+                                  {/* Checkmark Icon */}
+                                  <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className={`absolute inset-0 transition-opacity duration-200 ${copied ? 'opacity-100' : 'opacity-0'}`}
+                                  >
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                  </svg>
+                                </div>
+                              </button>
+                            );
                           };
                           
                           return (
                             <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
-                              <button
-                                onClick={copyToClipboard}
-                                className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-colors opacity-60 hover:opacity-100"
-                                title="Copy to clipboard"
-                              >
-                                <svg
-                                  width="16"
-                                  height="16"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                >
-                                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                </svg>
-                              </button>
-                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-gray-900 p-6 pr-16">
+                              <CopyButton />
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16">
                                 <code>{children}</code>
                               </pre>
                             </div>
@@ -116,38 +145,67 @@ export default function ResearchPage() {
                         );
                       },
                       pre: ({children, ...props}) => {
-                        const copyToClipboard = () => {
-                          // Simple text extraction - works for our MDX content
-                          let text = String(children);
-                          if (React.isValidElement(children)) {
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            text = String((children as any).props?.children || children);
-                          }
-                          navigator.clipboard.writeText(text);
+                        const PreCopyButton = () => {
+                          const [copied, setCopied] = useState(false);
+                          
+                          const copyToClipboard = () => {
+                            // Simple text extraction - works for our MDX content
+                            let text = String(children);
+                            if (React.isValidElement(children)) {
+                              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                              text = String((children as any).props?.children || children);
+                            }
+                            navigator.clipboard.writeText(text);
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                          };
+                          
+                          return (
+                            <button
+                              onClick={copyToClipboard}
+                              className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-all duration-200 opacity-60 hover:opacity-100"
+                              title={copied ? "Copied!" : "Copy to clipboard"}
+                            >
+                              <div className="relative w-4 h-4">
+                                {/* Copy Icon */}
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className={`absolute inset-0 transition-opacity duration-200 ${copied ? 'opacity-0' : 'opacity-100'}`}
+                                >
+                                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                
+                                {/* Checkmark Icon */}
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className={`absolute inset-0 transition-opacity duration-200 ${copied ? 'opacity-100' : 'opacity-0'}`}
+                                >
+                                  <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                              </div>
+                            </button>
+                          );
                         };
 
                         return (
                           <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
-                            <button
-                              onClick={copyToClipboard}
-                              className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-colors opacity-60 hover:opacity-100"
-                              title="Copy to clipboard"
-                            >
-                              <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                              </svg>
-                            </button>
-                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-gray-900 p-6 pr-16" {...props}>
+                            <PreCopyButton />
+                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" {...props}>
                               {children}
                             </pre>
                           </div>
