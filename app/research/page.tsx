@@ -82,10 +82,10 @@ export default function ResearchPage() {
                           };
                           
                           return (
-                            <div className="bg-white my-6 overflow-x-auto relative">
+                            <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
                               <button
                                 onClick={copyToClipboard}
-                                className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
+                                className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-colors opacity-60 hover:opacity-100"
                                 title="Copy to clipboard"
                               >
                                 <svg
@@ -102,7 +102,7 @@ export default function ResearchPage() {
                                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                                 </svg>
                               </button>
-                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16">
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-gray-900 p-6 pr-16">
                                 <code>{children}</code>
                               </pre>
                             </div>
@@ -127,10 +127,10 @@ export default function ResearchPage() {
                         };
 
                         return (
-                          <div className="bg-white my-6 overflow-x-auto relative">
+                          <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
                             <button
                               onClick={copyToClipboard}
-                              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
+                              className="absolute top-4 right-4 p-2 hover:bg-gray-200 rounded transition-colors opacity-60 hover:opacity-100"
                               title="Copy to clipboard"
                             >
                               <svg
@@ -147,7 +147,7 @@ export default function ResearchPage() {
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                               </svg>
                             </button>
-                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" {...props}>
+                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-gray-900 p-6 pr-16" {...props}>
                               {children}
                             </pre>
                           </div>
