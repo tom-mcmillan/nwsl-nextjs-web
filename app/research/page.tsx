@@ -1,10 +1,28 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import SharedHeader from "../../components/shared-header";
-import { getAllPosts } from "../../lib/posts";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default async function ResearchPage() {
-  const researchPosts = getAllPosts();
+interface PostData {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  content: string;
+}
+
+export default function ResearchPage() {
+  const [researchPosts, setResearchPosts] = useState<PostData[]>([]);
+
+  useEffect(() => {
+    // Fetch posts on client side
+    fetch('/api/posts')
+      .then(res => res.json())
+      .then(data => setResearchPosts(data))
+      .catch(() => setResearchPosts([]));
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
@@ -99,10 +117,13 @@ export default async function ResearchPage() {
                       },
                       pre: ({children, ...props}) => {
                         const copyToClipboard = () => {
-                          const text = typeof children === 'object' && children && 'props' in children 
-                            ? children.props.children 
-                            : children;
-                          navigator.clipboard.writeText(String(text));
+                          // Simple text extraction - works for our MDX content
+                          let text = String(children);
+                          if (React.isValidElement(children)) {
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            text = String((children as any).props?.children || children);
+                          }
+                          navigator.clipboard.writeText(text);
                         };
 
                         return (
