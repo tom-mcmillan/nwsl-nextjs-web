@@ -153,7 +153,7 @@ export default function ResearchPage() {
                           };
                           
                           return (
-                            <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
+                            <div className="bg-red-500 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
                               <CopyButton />
                               <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16 bg-transparent">
                                 <code className="bg-transparent">{children}</code>
