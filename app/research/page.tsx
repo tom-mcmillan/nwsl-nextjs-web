@@ -82,7 +82,7 @@ export default function ResearchPage() {
                           };
                           
                           return (
-                            <div className="bg-white border border-gray-300 rounded-lg my-6 overflow-x-auto relative">
+                            <div className="bg-white my-6 overflow-x-auto relative">
                               <button
                                 onClick={copyToClipboard}
                                 className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
@@ -127,7 +127,7 @@ export default function ResearchPage() {
                         };
 
                         return (
-                          <div className="bg-white border border-gray-300 rounded-lg my-6 overflow-x-auto relative">
+                          <div className="bg-white my-6 overflow-x-auto relative">
                             <button
                               onClick={copyToClipboard}
                               className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded transition-colors"
