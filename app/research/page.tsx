@@ -2,7 +2,7 @@ import SharedHeader from "../../components/shared-header";
 import Link from "next/link";
 import { getAllPosts } from "../../lib/posts";
 
-export default function ResearchPage() {
+export default async function ResearchPage() {
   const researchPosts = getAllPosts();
 
   return (

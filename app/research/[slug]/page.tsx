@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ResearchPost({ params }: { params: { slug: string } }) {
+export default async function ResearchPost({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
