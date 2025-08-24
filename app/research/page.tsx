@@ -56,6 +56,31 @@ export default async function ResearchPage() {
                       td: ({...props}) => (
                         <td className="border border-gray-300 px-4 py-2" {...props} />
                       ),
+                      code: ({className, children, ...props}) => {
+                        // Handle code blocks (```code```)
+                        if (className?.includes('language-')) {
+                          return (
+                            <div className="bg-gray-900 text-green-400 p-6 rounded-lg my-6 overflow-x-auto">
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre">
+                                <code>{children}</code>
+                              </pre>
+                            </div>
+                          );
+                        }
+                        // Handle inline code (`code`)
+                        return (
+                          <code className="bg-gray-100 px-2 py-1 rounded font-mono text-sm" {...props}>
+                            {children}
+                          </code>
+                        );
+                      },
+                      pre: ({children, ...props}) => (
+                        <div className="bg-gray-900 text-green-400 p-6 rounded-lg my-6 overflow-x-auto">
+                          <pre className="font-mono text-sm leading-relaxed whitespace-pre" {...props}>
+                            {children}
+                          </pre>
+                        </div>
+                      ),
                     }}
                   >
                     {post.content}
