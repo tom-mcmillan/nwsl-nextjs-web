@@ -1,20 +1,10 @@
-"use client";
-
 import SharedHeader from "../../components/shared-header";
 import Link from "next/link";
-
-// This would eventually be generated from your research posts
-const researchPosts = [
-  {
-    slug: "week-1-playmaking-insights",
-    title: "Week 1: Playmaking Insights",
-    date: "August 24, 2025",
-    description: "Analysis of key pass conversion rates and assist overperformance across NWSL players"
-  },
-  // Add more posts here as you create them
-];
+import { getAllPosts } from "../../lib/posts";
 
 export default function ResearchPage() {
+  const researchPosts = getAllPosts();
+
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
       <SharedHeader />
