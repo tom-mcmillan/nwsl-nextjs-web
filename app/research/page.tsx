@@ -155,8 +155,8 @@ export default function ResearchPage() {
                           return (
                             <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
                               <CopyButton />
-                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" style={{background: 'transparent'}}>
-                                <code style={{background: 'transparent', padding: 0}}>{children}</code>
+                              <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" style={{backgroundColor: 'transparent', background: 'none'}}>
+                                <code style={{backgroundColor: 'transparent', background: 'none', padding: 0, margin: 0}}>{children}</code>
                               </pre>
                             </div>
                           );
@@ -227,9 +227,9 @@ export default function ResearchPage() {
                         };
 
                         return (
-                          <div className="bg-red-500 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
+                          <div className="bg-gray-50 border border-gray-200 rounded-lg my-8 overflow-x-auto relative shadow-sm">
                             <PreCopyButton />
-                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16 bg-transparent" {...props}>
+                            <pre className="font-mono text-sm leading-relaxed whitespace-pre text-black p-6 pr-16" style={{backgroundColor: 'transparent', background: 'none'}} {...props}>
                               {children}
                             </pre>
                           </div>
