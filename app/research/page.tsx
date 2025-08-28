@@ -68,6 +68,12 @@ export default function ResearchPage() {
                           <table className="min-w-full border-collapse border border-gray-300" {...props} />
                         </div>
                       ),
+                      tbody: ({...props}) => (
+                        <tbody {...props} />
+                      ),
+                      tr: ({...props}) => (
+                        <tr className="even:bg-gray-50" {...props} />
+                      ),
                       th: ({...props}) => (
                         <th className="border border-gray-300 px-4 py-2 bg-gray-50 text-left font-semibold" {...props} />
                       ),
@@ -78,7 +84,7 @@ export default function ResearchPage() {
                         <h1 className="text-2xl font-bold mb-4 mt-6 text-gray-900" {...props} />
                       ),
                       h2: ({...props}) => (
-                        <h2 className="text-xl font-semibold mb-4 mt-8 text-gray-900 border-b border-gray-200 pb-2" {...props} />
+                        <h2 className="text-xl font-semibold mb-4 mt-8 text-gray-900" {...props} />
                       ),
                       h3: ({...props}) => (
                         <h3 className="text-lg font-semibold mb-3 mt-6 text-gray-900" {...props} />
@@ -99,10 +105,10 @@ export default function ResearchPage() {
                         <li className="mb-1" {...props} />
                       ),
                       code: ({...props}) => (
-                        <code className="font-mono text-sm bg-gray-100 px-2 py-1 rounded" {...props} />
+                        <code className="font-mono text-sm" {...props} />
                       ),
                       pre: ({...props}) => (
-                        <pre className="font-mono text-sm bg-gray-50 p-4 rounded-lg border overflow-x-auto whitespace-pre-wrap" {...props} />
+                        <pre className="font-mono text-sm border-t border-b border-gray-300 py-4 my-6 overflow-x-auto whitespace-pre-wrap" {...props} />
                       ),
                     }}
                   >
