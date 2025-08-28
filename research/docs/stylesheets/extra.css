@@ -37,14 +37,6 @@ body,
   font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
 }
 
-/* Custom header layout */
-.md-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
 /* Center the search bar */
 .md-search {
   position: absolute !important;
@@ -59,34 +51,6 @@ body,
   .md-search__form {
     width: 400px !important;
   }
-}
-
-/* Custom nav container - inserted via JavaScript */
-.custom-nav {
-  margin-left: auto;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  z-index: 2;
-  padding-right: 1rem;
-}
-
-.custom-nav a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-
-.custom-nav a:hover {
-  color: white;
-}
-
-.custom-nav a.active {
-  color: white;
-  font-weight: 600;
 }
 
 /* Hide the search icon since search is always visible */

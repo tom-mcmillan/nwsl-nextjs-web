@@ -13,17 +13,5 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarLogo.href = 'https://nwsldata.com';
   }
   
-  // Add custom navigation links
-  const header = document.querySelector('.md-header__inner');
-  if (header) {
-    const nav = document.createElement('div');
-    nav.className = 'custom-nav';
-    nav.innerHTML = `
-      <a href="/research" class="active">Research</a>
-      <a href="https://platform.nwsldata.com">Chat</a>
-    `;
-    
-    // Append navigation to the end (it will be positioned with CSS)
-    header.appendChild(nav);
-  }
+  // Navigation removed - users come through homepage
 });
