@@ -34,6 +34,7 @@ nav:
   - Research: index.md
   - Analysis:
     - Over/Under 2.5 Goals Prediction: over-under-goals-prediction.md
+    - Test Research: test-research.md
 
 markdown_extensions:
   - pymdownx.highlight:

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://nwsldata.com/</loc>
+         <loc>https://nwsldata.com/research/</loc>
          <lastmod>2025-08-28</lastmod>
     </url>
     <url>
-         <loc>https://nwsldata.com/over-under-goals-prediction/</loc>
+         <loc>https://nwsldata.com/research/over-under-goals-prediction/</loc>
          <lastmod>2025-08-28</lastmod>
     </url>
     <url>
-         <loc>https://nwsldata.com/archive/platform_architecture/</loc>
+         <loc>https://nwsldata.com/research/test-research/</loc>
+         <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+         <loc>https://nwsldata.com/research/archive/platform_architecture/</loc>
          <lastmod>2025-08-28</lastmod>
     </url>
 </urlset>
