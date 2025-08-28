@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.innerHTML = `
       <a href="/research" class="active">Research</a>
       <a href="https://platform.nwsldata.com">Chat</a>
-      <a href="https://platform.nwsldata.com/docs">Docs</a>
     `;
     
     // Append navigation to the end (it will be positioned with CSS)

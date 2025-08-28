@@ -9,11 +9,6 @@ export default function SharedHeader() {
     window.location.href = "https://platform.nwsldata.com";
   };
 
-  const handleDocsClick = () => {
-    // Seamless navigation - same tab for natural flow
-    window.location.href = "https://platform.nwsldata.com/docs/";
-  };
-
   const handleLogoClick = () => {
     // Stay in same tab when going to homepage
     window.location.href = "https://nwsldata.com";
@@ -48,14 +43,6 @@ export default function SharedHeader() {
           className="text-gray-600 hover:text-gray-800 font-medium"
         >
           Chat
-        </button>
-
-        {/* Docs Button */}
-        <button
-          onClick={handleDocsClick}
-          className="text-gray-600 hover:text-gray-800 font-medium"
-        >
-          Docs
         </button>
       </div>
     </header>
