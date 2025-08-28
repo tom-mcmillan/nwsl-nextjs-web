@@ -4,27 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "mkdocs build -d public/research && next build",
     "start": "next start",
     "lint": "next lint",
     "dx:doctor": "node ./scripts/dx-doctor.mjs"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.5.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
-    "canvas": "^3.2.0",
-    "fs": "^0.0.1-security",
-    "gray-matter": "^4.0.3",
     "next": "15.3.5",
-    "path": "^0.12.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
