@@ -2,6 +2,8 @@
 
 Advanced data analysis and predictive modeling for the National Women's Soccer League.
 
+✅ **Webhook Integration Restored!**
+
 ## Latest Research
 
 Our research focuses on extracting actionable insights from NWSL match data using machine learning and statistical analysis techniques.
