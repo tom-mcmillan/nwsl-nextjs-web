@@ -24,12 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://platform.nwsldata.com/docs">Docs</a>
     `;
     
-    // Insert before search
-    const search = header.querySelector('.md-search');
-    if (search) {
-      header.insertBefore(nav, search);
-    } else {
-      header.appendChild(nav);
-    }
+    // Append navigation to the end (it will be positioned with CSS)
+    header.appendChild(nav);
   }
 });
