@@ -46,12 +46,9 @@ export default function Home() {
         <main className="flex flex-col items-center text-center max-w-2xl w-full">
           {/* Hero Section */}
           <div className="mb-12">
-            <h1 className="text-3xl font-medium mb-4 text-gray-900">
+            <h1 className="text-3xl font-medium text-gray-900">
               {dynamicHeadline}
             </h1>
-            <p className="text-gray-600 text-lg">
-              Access the most comprehensive NWSL database ever built
-            </p>
           </div>
 
           {/* ChatGPT-style Question Section */}
@@ -107,7 +104,7 @@ export default function Home() {
           {/* Access Options */}
           <div className="w-full mt-16">
             <h2 className="text-xl font-medium text-gray-900 mb-6">
-              Access the data
+              Access the most comprehensive NWSL database ever built
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
