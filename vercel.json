@@ -1,4 +1,1 @@
-{
-  "buildCommand": "pip install -r requirements.txt && mkdocs build && npm run build",
-  "installCommand": "npm install"
-}
+{}
