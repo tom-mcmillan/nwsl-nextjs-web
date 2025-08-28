@@ -106,8 +106,8 @@ export default function Home() {
 
           {/* Access Options */}
           <div className="w-full mt-16">
-            <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-6">
-              More Ways to Access the Data
+            <h2 className="text-xl font-medium text-gray-900 mb-6">
+              Access the data
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
