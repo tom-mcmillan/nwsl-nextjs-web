@@ -1,11 +1,11 @@
 site_name: NWSL Data
 site_url: https://nwsldata.com/research
-site_dir: public/research
+docs_dir: docs
+site_dir: ../public/research
 site_description: Advanced data analysis and predictive modeling for the National Women's Soccer League
 
 theme:
   name: material
-  custom_dir: theme_overrides
   palette:
     # Light mode
     - scheme: default
@@ -22,8 +22,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - search.highlight
     - search.share
@@ -31,10 +31,9 @@ theme:
     - content.code.copy
 
 nav:
-  - Research: index.md
-  - Analysis:
-    - Over/Under 2.5 Goals Prediction: over-under-goals-prediction.md
-    - Test Research: test-research.md
+  - Home: index.md
+  - Over/Under 2.5 Goals Prediction: over-under-goals-prediction.md
+  - Test Research: test-research.md
 
 markdown_extensions:
   - pymdownx.highlight:
