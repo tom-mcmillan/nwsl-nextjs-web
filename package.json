@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "echo 'Building via GitHub Actions'",
+    "build": "mkdocs build -d public/research && next build",
     "start": "next start",
     "lint": "next lint",
     "dx:doctor": "node ./scripts/dx-doctor.mjs"
