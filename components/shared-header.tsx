@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function SharedHeader() {
-
+  const pathname = usePathname();
 
   const handlePlatformClick = () => {
     // Seamless navigation - same tab for natural flow
@@ -30,6 +31,9 @@ export default function SharedHeader() {
         <h1 className="text-2xl font-semibold">
           <span className="text-blue-500">NWSL</span>{" "}
           <span className="text-black">Data</span>
+          {pathname === '/research' && (
+            <span className="text-gray-500">/Research</span>
+          )}
         </h1>
       </div>
 

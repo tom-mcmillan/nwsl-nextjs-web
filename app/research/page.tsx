@@ -29,15 +29,6 @@ export default function ResearchPage() {
       <SharedHeader />
       
       <div className="flex-1 px-8 py-12 max-w-4xl mx-auto w-full">
-        <div className="mb-12">
-          <h1 className="text-4xl font-semibold mb-4 text-gray-900">
-            NWSL Research
-          </h1>
-          <p className="text-lg text-gray-600">
-            Weekly data analyses and insights from the NWSL database
-          </p>
-        </div>
-
         <div className="space-y-16">
           {researchPosts.length > 0 ? (
             researchPosts.map((post) => (
