@@ -72,22 +72,22 @@ export default function ResearchPage() {
                         <th className="border border-gray-300 px-4 py-2 bg-gray-50 text-left font-semibold" {...props} />
                       ),
                       td: ({...props}) => (
-                        <td className="border border-gray-300 px-4 py-2 font-mono text-xs" {...props} />
+                        <td className="border border-gray-300 px-4 py-3 font-mono text-sm text-center" {...props} />
                       ),
                       h1: ({...props}) => (
                         <h1 className="text-2xl font-bold mb-4 mt-6 text-gray-900" {...props} />
                       ),
                       h2: ({...props}) => (
-                        <h2 className="text-xl font-semibold mb-3 mt-5 text-gray-900" {...props} />
+                        <h2 className="text-xl font-semibold mb-4 mt-8 text-gray-900 border-b border-gray-200 pb-2" {...props} />
                       ),
                       h3: ({...props}) => (
-                        <h3 className="text-lg font-semibold mb-2 mt-4 text-gray-900" {...props} />
+                        <h3 className="text-lg font-semibold mb-3 mt-6 text-gray-900" {...props} />
                       ),
                       p: ({...props}) => (
-                        <p className="mb-4 text-gray-700 leading-relaxed" {...props} />
+                        <p className="mb-6 text-gray-700 leading-relaxed text-base" {...props} />
                       ),
                       strong: ({...props}) => (
-                        <strong className="font-semibold text-gray-900" {...props} />
+                        <strong className="font-bold text-gray-900 bg-yellow-100 px-1 rounded" {...props} />
                       ),
                       ul: ({...props}) => (
                         <ul className="mb-4 ml-6 list-disc" {...props} />
@@ -99,10 +99,10 @@ export default function ResearchPage() {
                         <li className="mb-1" {...props} />
                       ),
                       code: ({...props}) => (
-                        <code className="font-mono text-xs" {...props} />
+                        <code className="font-mono text-sm bg-gray-100 px-2 py-1 rounded" {...props} />
                       ),
                       pre: ({...props}) => (
-                        <pre className="font-mono text-xs" {...props} />
+                        <pre className="font-mono text-sm bg-gray-50 p-4 rounded-lg border overflow-x-auto whitespace-pre-wrap" {...props} />
                       ),
                     }}
                   >
