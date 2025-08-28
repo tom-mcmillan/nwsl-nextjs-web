@@ -37,19 +37,16 @@ body,
   font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
 }
 
-/* Center the search bar */
+/* Move search bar to the right */
 .md-search {
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  margin: 0 !important;
-  z-index: 1;
+  position: relative !important;
+  margin-left: auto !important;
 }
 
 /* Adjust search width */
 @media screen and (min-width: 960px) {
   .md-search__form {
-    width: 400px !important;
+    width: 300px !important;
   }
 }
 
