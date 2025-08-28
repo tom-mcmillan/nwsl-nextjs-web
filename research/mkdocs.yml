@@ -6,6 +6,9 @@ site_description: Advanced data analysis and predictive modeling for the Nationa
 
 theme:
   name: material
+  font:
+    text: false  # Disable default font loading
+    code: Roboto Mono
   palette:
     # Light mode
     - scheme: default
@@ -58,3 +61,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/tom-mcmillan/nwsl-nextjs-web
+
+extra_css:
+  - stylesheets/extra.css
