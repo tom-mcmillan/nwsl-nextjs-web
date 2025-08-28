@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
 
 export default function SharedHeader() {
-  const pathname = usePathname();
 
-  const handlePlatformClick = () => {
+  const handleChatClick = () => {
     // Seamless navigation - same tab for natural flow
     window.location.href = "https://platform.nwsldata.com";
   };
@@ -31,9 +29,6 @@ export default function SharedHeader() {
         <h1 className="text-2xl font-semibold">
           <span className="text-blue-500">NWSL</span>{" "}
           <span className="text-black">Data</span>
-          {pathname === '/research' && (
-            <span className="text-gray-500">/Research</span>
-          )}
         </h1>
       </div>
 
@@ -47,12 +42,12 @@ export default function SharedHeader() {
           Research
         </button>
 
-        {/* Platform Button */}
+        {/* Chat Button */}
         <button
-          onClick={handlePlatformClick}
+          onClick={handleChatClick}
           className="text-gray-600 hover:text-gray-800 font-medium"
         >
-          Platform
+          Chat
         </button>
 
         {/* Docs Button */}
