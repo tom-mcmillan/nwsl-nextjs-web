@@ -35,7 +35,7 @@ export default function SharedHeader() {
         <div className="flex items-center gap-4">
           {/* Research Button */}
           <button
-            onClick={() => window.location.href = "/research"}
+            onClick={() => window.location.href = "https://research.nwsldata.com"}
             className="text-gray-600 hover:text-gray-800 font-medium"
           >
             Research

@@ -128,7 +128,10 @@ export default function Home() {
               </a>
 
               {/* API Access */}
-              <div className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors cursor-not-allowed opacity-75">
+              <a 
+                href="https://api.nwsldata.com/docs"
+                className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors cursor-pointer block"
+              >
                 <div className="mb-4">
                   <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -138,14 +141,14 @@ export default function Home() {
                 <p className="text-sm text-gray-600 mb-4">
                   Query the database directly with our REST API for your own applications
                 </p>
-                <span className="text-sm text-gray-400 font-medium">
-                  Coming soon
+                <span className="text-sm text-blue-500 hover:text-blue-600 font-medium">
+                  View documentation →
                 </span>
-              </div>
+              </a>
 
               {/* Research */}
               <a 
-                href="/research"
+                href="https://research.nwsldata.com"
                 className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors cursor-pointer block"
               >
                 <div className="mb-4">

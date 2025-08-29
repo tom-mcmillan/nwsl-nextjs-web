@@ -6,4 +6,4 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://nwsldata.com/sitemap.xml
-Sitemap: https://nwsldata.com/research/sitemap.xml
+Sitemap: https://research.nwsldata.com/sitemap.xml
